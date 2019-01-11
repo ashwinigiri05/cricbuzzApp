@@ -1,0 +1,76 @@
+<form>
+  <div class="jumbotron">
+  <div class="row ">
+  <div class="col">
+       
+      <table class="table ">
+          <thead class="thead-light">
+            <tr><p></p></tr>
+            <tr>
+               <th scope="col" *ngFor="let aa of tm">{{aa.tmname1}}</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+              <tr>
+                  <th><input type="text" #playername1></th>
+                  <th><button type="button" class="btn btn-success" (click)="onaddclick()" >addPlayer</button></th> 
+              </tr> 
+          </tbody>
+
+          <thead>
+              <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Team1 Player</th>
+                  <th scope="col">Actions</th>
+                 
+              </tr>
+
+              <tr *ngFor="let cc of playernames; index as i">
+                <th>{{ i+1 }}</th>
+                <th>{{cc}}</th>
+                
+                <th><button type="button" value="Remove" class="btn btn-danger ml-2" (click)="deleteFieldValue(cc)">Delete</button></th> 
+                
+         </thead>
+      </table> 
+      <button type="button" class="btn btn-primary" (click)="onSaveClick()">Save</button>
+  </div>
+  
+  <div class="col">
+    <table class="table ml-4 ">
+        <thead class="thead-light">
+          <tr>
+             <th scope="col" *ngFor="let aa of tm">{{aa.tmname2}}</th>
+          </tr>
+        </thead>
+        
+        <tbody >
+            <tr>
+              <th> <input type="text" #playername2 ></th>
+              <th><button type="button" class="btn btn-success" (click)="onaddButtonclick()" >addPlayer</button></th> 
+            </tr> 
+        </tbody>
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Team2 Player</th>
+            <th scope="col">Actions</th>
+            
+          </tr>
+          <tr *ngFor="let cc of playernames2; index as i">
+              <th>{{ i+1 }}</th>
+            <th>{{cc}}</th>
+            <th><button type="button" value="Remove" class="btn btn-danger ml-2" (click)="deleteFieldValue1(cc)">Delete</button></th> 
+            
+          </tr>
+        </thead>
+       
+  </table> 
+  <button type="button" class="btn btn-primary" (click)="onSaveClick1()">Save</button>
+</div>
+</div>
+   <button class="btn btn-success my-2  mr-4" (click)="onSubmitClick()">Start Inning</button>
+</div>
+</form>
+

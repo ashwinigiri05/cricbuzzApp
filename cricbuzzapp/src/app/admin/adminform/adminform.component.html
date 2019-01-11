@@ -1,0 +1,73 @@
+
+<div class="row ">
+  <div class="col">
+      <form class="jumbotron">
+        <h4 class=" text-center"><b>admin Log In</b></h4>
+          <div class="form-group row my-4">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Team_1</label>
+            <div class="col-sm-4">
+              <input type="textbox" class="form-control col-md-12" id="inputTeam" placeholder="Team Name" (blur)=func() #tmname1>
+             </div>
+          </div>
+          <div class="form-label-group">
+          <div class="form-group row ">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Team_2</label>
+            <div class="col-sm-4">
+              <input type="textbox" class="form-control col-md-12" id="inputTeam" placeholder="Team Name" (blur)=func() #tmname2>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="Team_1" class="col-sm-2 col-form-label">Toss</label>
+            <select class="hideLabel form-cotrol col-md-4" #toss>
+              <option selected="--"></option>
+              <option>
+                  {{t1}}
+              </option>
+              <option>
+                {{t2}}
+              </option>
+            </select>
+          </div>    
+        </div>
+           
+          <div class="form-group row">
+              <label for="Desicion" class="col-form-label col-sm-2 col-form-label">Desicion</label>
+            
+            <select class=" form-cotrol col-md-4 " #Desicion>
+              <option selected>Choose...</option>
+              <option value="1">Batting</option>
+              <option value="2">Balling</option>
+            </select>
+          </div>
+    
+          <div class="form-group row my-4">
+              <label for="inputEmail3" class="col-form-label col-sm-2 col-form-label">Overs</label>
+              <div class="col-sm-4">
+                <input type="number" class="col-form-label col-sm-12 col-form-label" id="inputOvers" placeholder=""  #overs>
+               </div>
+            </div>
+            <div class="form-group row my-4">
+            <p>
+              <label for="date" >Date </label>
+              <input type="date" id="date"  #date>
+            </p>
+          </div>
+          <div class="form-group row my-4">
+            <p>
+              <label for="time">Time</label>
+              <input type="time" id="time" #time>
+            </p>
+          </div>
+           
+          <div class="form-group row">
+            <div class="col-sm-4">
+              <button class="btn btn-primary mx-3 my-4"(click)="onStartInningButtonClick()">Define Team</button>
+            </div>
+          </div>
+         
+      </form>
+  </div>
+  <div class="col">
+    <router-outlet></router-outlet>
+  </div>
+</div>

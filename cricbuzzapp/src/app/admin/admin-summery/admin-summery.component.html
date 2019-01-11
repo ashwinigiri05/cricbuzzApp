@@ -1,0 +1,62 @@
+
+<div class="row ">
+    <div class="col">
+        <form class="jumbotron">
+          <h4 class="text-center"><b>admin summery</b></h4>
+            
+          <div class="form-group row">
+            <label for="possibleRuns" class="col-sm-4 col-form-label">PossibilityOfRuns</label>
+            <div class="row-sm-5">
+            <select class="hideLabel form-control" (change)="onSelectOfPossibility()" #possibleRuns>
+            <option selected="">---Choose Runs/Wicket---</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>6</option>
+            <option>Wicket</option>
+            </select>
+            </div>
+            
+            <div class="wkt" *ngIf="showWicket">
+            <label class="col-sm-4 col-form-label" for="">Wicket</label>
+           
+            <select class="hideLabel from-control" #Wicket [disabled]="btnDisable" (change)="onSelectOfWicket()">
+            <option selected="">Selected Wicket</option>
+            <option>RunOut</option>
+            <option>Stumping</option>
+            <option>LBW</option>
+            <option>Hit the ball twice</option>
+            <option>Bowled</option>
+            <option>Hit wicket</option>
+            <option>Handling the ball</option>
+            <option>Retired</option>
+            <option>Timed out</option>
+            <option>Catch</option>
+            </select>
+          
+            <div class="Catch" *ngIf="showCatch">
+                <label class="col-sm-4 col-form-label" for="">Catch</label>
+                
+                <select class="hideLabel from-control" #Catch [disabled]="btnDisable" (change)="onSelectOfCatch()">
+                   <option>----1----</option>
+                   <option>----2----</option>
+                </select>
+            </div>
+            </div>
+            </div> 
+            
+           
+            <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-4 col-form-label">Commentary</label>
+            <input type="text" placeholder="Commentary">
+            </div>
+            <button class="btn btn-success mx-3 my-4"(click)="onaddToScorCardButtonClick()">addToScorCard</button>
+        </form>
+    </div>
+            <div class="col">
+            <router-outlet></router-outlet>
+            </div>
+    </div>
+           
